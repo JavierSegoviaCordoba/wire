@@ -83,6 +83,9 @@ kotlin {
       }
       nodejs()
     }
+    wasmJs {
+      browser()
+    }
   }
   if (System.getProperty("knative", "true").toBoolean()) {
     iosX64()
@@ -126,6 +129,11 @@ kotlin {
         dependencies {
           implementation(libs.kotlin.test.js)
         }
+      }
+    }
+    val wasmJsTest by getting {
+      dependencies {
+        implementation(libs.kotlin.test.wasm.js)
       }
     }
   }

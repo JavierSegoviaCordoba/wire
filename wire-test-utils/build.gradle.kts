@@ -35,6 +35,9 @@ kotlin {
       nodejs()
       browser()
     }
+    wasmJs {
+      browser()
+    }
   }
   if (System.getProperty("knative", "true").toBoolean()) {
     iosX64()
